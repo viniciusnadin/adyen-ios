@@ -133,8 +133,8 @@ class FormCardNumberItemTests: XCTestCase {
 
     func testExternalBinLookupHappyflow() {
         publicKeyProvider.mockResponse = .success("SOME_PUBLIC_KEY")
-        apiClient.mockedResults = [.success(BinLookupResponse(brands: [.masterCard])),
-                                   .success(BinLookupResponse(brands: []))]
+        apiClient.mockedResults = [.success(BinLookupResponse(detectedBrands: [.masterCard])),
+                                   .success(BinLookupResponse(detectedBrands: []))]
 
         let item = FormCardNumberItem(supportedCardTypes: supportedCardTypes, environment: .test)
         XCTAssertEqual(item.cardTypeLogos.count, 5)

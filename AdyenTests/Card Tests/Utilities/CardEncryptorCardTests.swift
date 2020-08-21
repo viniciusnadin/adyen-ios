@@ -140,5 +140,12 @@ class CardEncryptorCardTests: XCTestCase {
         let key = CardEncryptorCardTests.randomTestValidCardPublicKey
         XCTAssertNotNil(try card.encryptedToToken(publicKey: key, holderName: nil))
     }
-    
+
+    func testSometing() {
+        CardEncryptor.cleanPublicKeys(publicKeyToken: CardEncryptorCardTests.randomTestValidCardPublicKey)
+        let card = CardEncryptor.Card(expiryYear: "test_expiry_year")
+        let key = CardEncryptorCardTests.randomTestValidCardPublicKey
+
+        XCTAssertNotNil( try? CardEncryptor.encryptedToken(for: card, holderName: nil, publicKey: key))
+    }
 }

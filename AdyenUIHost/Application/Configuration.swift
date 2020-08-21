@@ -29,7 +29,7 @@ internal struct Configuration {
     
     static let additionalData = ["allow3DS2": true]
     
-    static let clientKey = "{YOUR_CLIENT_KEY}"
+    static let clientKey = "test_Y7PWSUZA7BGLXHROFDENCUQEG4L24VSE"
     
     // swiftlint:disable:next line_length
     static let cardPublicKey = "{YOUR_CARD_PUBLIC_KEY}"
